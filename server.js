@@ -53,6 +53,11 @@ app.get("/posts/:id", (req, res) => {
 
 // POST new post
 app.post("/posts", (req, res) => {
+  if (!req.body.title) {
+    return res.status(400).json({
+        message: "Title is required"
+    });
+}
   const newPost = {
      ...req.body,
      status: "pending verification"
