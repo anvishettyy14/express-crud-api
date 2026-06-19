@@ -2,6 +2,7 @@ const express = require("express");
 const { status } = require("express/lib/response");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const db = require("./database");
 const app = express();
 
 app.use(express.json());
